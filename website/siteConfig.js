@@ -7,7 +7,7 @@ const users = [];
 
 const siteConfig = {
   title: 'redact',
-  tagline: 'Fast, lightweight, extensible.',
+  tagline: 'Personalized, extensible censorship',
   url: 'https://git-ced.github.io',
   baseUrl: '/redact-docs/',
   projectName: 'redact-docs',
