@@ -6,7 +6,7 @@
 const users = [];
 
 const siteConfig = {
-  title: 'redact',
+  title: 'Redact',
   tagline: 'Personalized, extensible censorship',
   url: 'https://git-ced.github.io',
   baseUrl: '/redact-docs/',
@@ -25,7 +25,7 @@ const siteConfig = {
     primaryColor: '#0D0820',
     secondaryColor: '#DBD8E7',
   },
-  copyright: `Copyright © ${new Date().getFullYear()} redact`,
+  copyright: `Copyright © ${new Date().getFullYear()} Redact`,
   highlight: {
     theme: 'androidstudio',
     defaultLang: 'javascript',

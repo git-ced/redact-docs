@@ -111,7 +111,7 @@ class Index extends React.Component {
         {[
           {
             content:
-              'redact supports dead code elimination (**tree shaking**) or in simpler terms, it removes unused code.',
+              'Redact supports dead code elimination (**tree shaking**) or in simpler terms, it removes unused code.',
             image: `${siteConfig.baseUrl}img/undraw_treeshake.svg`,
             imageAlign: 'left',
             title: 'Get what you need.',
@@ -126,7 +126,7 @@ class Index extends React.Component {
         {[
           {
             content:
-              'redact supports both ESM and CJS module formats, **import** it or **require** it however you want.',
+              'Redact supports both ESM and CJS module formats, **import** it or **require** it however you want.',
             image: `${siteConfig.baseUrl}img/undraw_package.svg`,
             imageAlign: 'right',
             title: 'Get how you want.',
