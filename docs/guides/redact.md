@@ -48,7 +48,7 @@ This works by replacing blacklisted words with grawlix. A grawlix is string of t
 
 ### Error
 
-> Throws an error if required parameters is not met.
+> Throws an error if the required parameters are not given to the function.
 
 ## Import
 
