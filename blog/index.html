@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Blog · Redact</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Personalized, extensible censorship"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Blog · Redact"/><meta property="og:type" content="website"/><meta property="og:url" content="https://git-ced.github.io/redact-docs/"/><meta property="og:description" content="Personalized, extensible censorship"/><meta property="og:image" content="https://git-ced.github.io/redact-docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://git-ced.github.io/redact-docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/redact-docs/img/redact-logo-light.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css"/><link rel="alternate" type="application/atom+xml" href="https://git-ced.github.io/redact-docs/blog/atom.xml" title="Redact Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://git-ced.github.io/redact-docs/blog/feed.xml" title="Redact Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/redact-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/redact-docs/css/main.css"/><script src="/redact-docs/js/codetabs.js"></script></head><body class="blog"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/redact-docs/"><img class="logo" src="/redact-docs/img/redact-logo-light.svg" alt="Redact"/><h2 class="headerTitleWithLogo">Redact</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/redact-docs/docs/getting-started/installation" target="_self">Docs</a></li><li class=""><a href="/redact-docs/help" target="_self">Help</a></li><li class="siteNavGroupActive siteNavItemActive"><a href="/redact-docs/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/redact-docs/blog/2020/06/26/new-version-1.0.0">New Version 1.0.0</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="posts"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/redact-docs/blog/2020/06/26/new-version-1.0.0">New Version 1.0.0</a></h1><p class="post-meta">June 26, 2020</p><div class="authorBlock"><p class="post-authorName"><a href="https://github.com/git-ced" target="_blank" rel="noreferrer noopener">Prince Neil Cedrick Castro</a></p><div class="authorPhoto"><a href="https://github.com/git-ced" target="_blank" rel="noreferrer noopener"><img src="https://avatars0.githubusercontent.com/u/46030248?s=400&amp;u=7c92b8294636685f00edd491b1cdf9ed8310a2b4&amp;v=4" alt="Prince Neil Cedrick Castro"/></a></div></div></header><article class="post-content"><div><span><h2><a class="anchor" aria-hidden="true" id="functions"></a><a href="#functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Functions</h2>
+<ul>
+<li><strong>blacklist</strong> - Returns a distinct values for all the blacklisted words given.</li>
+<li><strong>whitelist</strong> - Filters the blacklist to allow some given words.</li>
+<li><strong>redact</strong> - Evaluate a string if its in the blacklist and returns a censored version.</li>
+<li><strong>isBlacklisted</strong> - Returns if the sentence has a blacklisted word.</li>
+<li><strong>blacklistCount</strong> - Returns the count of blacklisted words in the sentence</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="lists"></a><a href="#lists" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lists</h2>
+<ul>
+<li>English profanity</li>
+<li>English sexually explicit</li>
+<li>Filipino profanity</li>
+<li>Filipino sexually explicit</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"></div></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/redact-docs/" class="nav-home"><img src="/redact-docs/img/redact-logo-light.svg" alt="Redact" width="66" height="58"/></a><div><h5>Docs</h5><a href="/redact-docs/docs/getting-started/installation">Getting Started</a><a href="/redact-docs/docs/math/sum">Guides</a></div><div><h5>Package</h5><a href="https://www.npmjs.com/package/@princedev/redact">NPM</a><a style="margin-bottom:8px" href="https://github.com/git-ced/redact">GitHub</a><a class="github-button" href="https://github.com/git-ced/redact" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div><div><h5>More</h5><a href="/redact-docs/help">Help</a><a href="/redact-docs/blog">Blog</a></div></section><section class="copyright">aws.cedi@gmail.com</section><section class="copyright">Copyright © 2020 Redact</section></footer></div></body></html>
