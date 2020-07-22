@@ -4,60 +4,121 @@ title: Filtering strings or sentences
 sidebar_label: Redact
 ---
 
-Redact is designed to be easily installed and used in your project. Just follow these simple steps below.
+This works by replacing blacklisted words with grawlix. A grawlix is string of typographical symbols used to replace/censor words.
 
-## Prerequisites
+## Syntax
 
-<ol>
-  <li>
-    <p>
-      Ensure you have the latest version of Node installed. We also recommend you install Yarn as well.
-    </p>
-    <blockquote>
-      Node >= 8.x and Yarn >= 1.5.
-    </blockquote>
-  </li>
-  <li>
-    <p>
-      Create a project, if none exists, and change your directory to this project's root.
-    </p>
-  </li>
-</ol>
+`redact(string: string, blacklist: string[], options?: object): string`
 
-## Installing Redact
+### Parameters
 
-This package is available through the [npm registry](https://www.npmjs.com/package/@princedev/redact). To install redact, on the command line, run:
+`string: string` - Given string/sentence to be filtered.
 
-### NPM
+`blacklist: string[]` - Blacklist
 
-```bash
-$ npm -i @princedev/redact
-```
+`options` - Additional options that may be passed.
 
-### Yarn
+#### Options
+<table>
+  <tr>
+    <th>props</th>
+    <th>default</th>
+    <th>description</th>
+  </tr>
+  <tr>
+    <td><code>grawlix</code></td>
+    <td>*</td>
+    <td>Character used to replace the blacklisted word.</td>
+  </tr>
+  <tr>
+    <td><code>replaceByLength</code></td>
+    <td>true</td>
+    <td>Determines if the blacklisted word should be replaced by its word length or only once</td>
+  </tr>
+  <tr>
+    <td><code>caseSensitive</code></td>
+    <td>false</td>
+    <td>Determines if the check for a blacklisted word in a sentence is case sensitive</td>
+  </tr>
+</table>
 
-```bash
-$ yarn add @princedev/redact
-```
+### Returns
 
-This will create the `node_modules` directory in your current directory (if one doesn’t exist yet) and will download the package to that directory.
+`string` - The resulting sentence/string that has its blacklisted words replaced by a grawlix.
 
-> If there is no `package.json` file in the local directory, the latest version of the package is installed. If there is a `package.json` file, npm installs the latest version that satisfies the semver rule declared in `package.json`.
+### Error
+
+> Throws an error if required parameters is not met.
 
 ## Import
 
-Start using the library by importing it:
-
-### CommonJS
-
 ```javascript
-const redact = require('@princedev/redact');
+import { redact } from '@princedev/redact';
 ```
 
-### ES6
+## Examples
+
+### Basic Usage
+
+Basic usage with default options.
 
 ```javascript
-import { sum, difference } from '@princedev/redact';
+const racialBlacklist = blacklist('nigga', 'eskimo');
+const redactSentence = redact('Wassup my nigga', racialBlacklist)
 ```
 
-By now, you should be able to use redact.
+> `redactSentence` would be 'Wassup my *****'.
+
+### Grawlix Usage
+
+Usage with changing the grawlix option.
+
+```javascript
+const racialBlacklist = blacklist('nigga', 'eskimo');
+const redactSentence = redact('Wassup my nigga', racialBlacklist, {
+  grawlix: '$',
+});
+```
+
+> `redactSentence` would be 'Wassup my $$$$$'.
+
+### Replace by Length Usage
+
+Usage with turning off replace by length
+
+```javascript
+const racialBlacklist = blacklist('nigga', 'eskimo');
+const redactSentence = redact('Wassup my nigga', racialBlacklist, {
+  replaceByLength: false,
+});
+```
+
+> `redactSentence` would be 'Wassup my $'.
+
+### Case Sensitive Usage
+
+Usage with turning off replace by length
+
+```javascript
+const racialBlacklist = blacklist('nigga', 'eskimo');
+const redactSentence = redact('Wassup my Nigga-nigga', racialBlacklist, {
+  caseSensitive: true,
+});
+```
+
+> `redactSentence` would be 'Wassup my Nigga-*****'.
+
+### Multiple Option Usage
+
+Usage with multiple options.
+
+```javascript
+const racialBlacklist = blacklist('nigga', 'eskimo');
+const redactSentence = redact('Wassup my nigga', racialBlacklist, {
+  grawlix: 'censored',
+  replaceByLength: false,
+  caseSensitive: false,
+});
+```
+
+> `redactSentence` would be 'Wassup my censored'.

@@ -22,7 +22,7 @@ Whitelisting is an action of adding list of strings or words that should be incl
 
 ### Error
 
-> Throws an error if a string is not given.
+> Throws an error if required parameters in not met.
 
 ## Import
 
