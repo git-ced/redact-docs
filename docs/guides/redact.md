@@ -1,7 +1,7 @@
 ---
-id: installation
-title: Installation
-sidebar_label: Installing Redact
+id: redact
+title: Filtering strings or sentences
+sidebar_label: Redact
 ---
 
 Redact is designed to be easily installed and used in your project. Just follow these simple steps below.

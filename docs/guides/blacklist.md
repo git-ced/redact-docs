@@ -1,7 +1,7 @@
 ---
-id: installation
-title: Installation
-sidebar_label: Installing Redact
+id: blacklist
+title: Adding your blacklist
+sidebar_label: Blacklist
 ---
 
 Redact is designed to be easily installed and used in your project. Just follow these simple steps below.

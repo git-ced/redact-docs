@@ -1,7 +1,7 @@
 ---
-id: installation
-title: Installation
-sidebar_label: Installing Redact
+id: count
+title: Counting blacklisted words in a sentence
+sidebar_label: Blacklist Count
 ---
 
 Redact is designed to be easily installed and used in your project. Just follow these simple steps below.
