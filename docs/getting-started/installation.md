@@ -57,7 +57,7 @@ const redact = require('@princedev/redact');
 ### ES6
 
 ```javascript
-import { sum, difference } from '@princedev/redact';
+import { blacklist, redact } from '@princedev/redact';
 ```
 
 By now, you should be able to use redact.
