@@ -96,7 +96,7 @@ class Index extends React.Component {
             title: 'Pure',
           },
           {
-            content: 'Functions are documented and viewable [**here**](/docs/math/sum) or in your IDE (JSDoc)',
+            content: 'Functions are documented and viewable [**here**](/docs/guides/blacklist) or in your IDE (JSDoc)',
             image: `${siteConfig.baseUrl}img/undraw_docs.svg`,
             imageAlign: 'top',
             title: 'Docs',
